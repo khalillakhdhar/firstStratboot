@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.model.User;
@@ -27,7 +28,7 @@ List<User> users=new ArrayList<User>();
 		
 	}
 	@PostMapping("user")
-	public List<User> AddUser(User user)
+	public List<User> AddUser(@RequestBody User user)
 	{
 		users.add(user);
 		return users;
